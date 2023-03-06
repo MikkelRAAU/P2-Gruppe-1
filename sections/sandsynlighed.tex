@@ -3,6 +3,7 @@ Noget indledende tekst om sandsynlighed
 
 \subsection{Udfaldsrum og hændelser}
 Mængden af alle mulige udfald fra et statisk eksperiment kaldes for \emph{udfaldsrummet,  S}, et hvert udfald kalde et element eller medlem af udfaldsrummet. Det vil sige, at udfaldsrummet for kast med en mønt indeholder de to elementer; plat og krone.
+\newline
 En delmængde af udfaldsrummet kaldes en \emph{hændelse, A}, dette noteres som $A \subseteq S$. Ved kast med en terning kan en hændelse, $A$ være, at terningen viser et lige antal øjne. Denne hændelse noteres $A=\{2,4,6\}$.
 
 Eventuelt noget mere og hændelser.
@@ -14,11 +15,21 @@ Hvis der er lige stor sandsynlighed for alle udfald i udfaldsrummet kalde sandsy
 
 
 \subsection{Stokastiske variable}
-En stokastisk variabel tildeler variable i udfaldsrummet en talværdi.
-\paragraph{Middel}
-\paragraph{Varians og standardafvigelse}
+En stokastisk variabel, $X$, tildeler variable i udfaldsrummet en talværdi. Dette kunne være antallet af plat ved 5 kast med mønt eller summen af øjne ved flere kast med to terninger. Den stokastiske varibel fordeler sig efter en sandsynlighedfunktion, $f(X)$.
 
 \subsubsection{Diskrete stokastiske variable}
+Ved diskrete stokastiske variable antager $X$ kun hele værdier. Det giver eksempelvis ikke mening at tale om en halv plat eller halve øjne på terninger, hvorfor begge disse er eksempler på diskrete stokastiske variable.
+Sandsynlighedsfunktionen for en diskret stokatisk variabel beskriver sandligheden for at variablen antager en given værdi, $f(x)=P(X=x)$. Dette kaldes også for \emph{massefunktionen}.
+Herudfra kan variablens fordelingsfunktion, $F(x)$, bestemmes. Denne anvendes til at bestemme sandsynligheden for, at den stokastiske variabel antager en værdi lig med eller mindre end $x$, $F(x)=P(X \le x)=\sum_{t \le x}^{} f(t)$ for $-\infty < x < \infty$.
+
+\paragraph{Middel} Middelværdien kaldes også for den forventede værdi, $E(X)$. Denne beregnes ved brug af sandsynlighedsfunktionen og er et vægtet gennemsnit, hvor hver mulig værdi for $X$ indgår med sin sandsynlighed, $f(x)$. Den forventede værdi beskriver det gennemsnitlige resultat ved mange gentagelser af samme eksperiment.
+$$\mu=E(X)=\sum_{x}^{}x \cdot f(x)$$
+
+\paragraph{Varians og standardafvigelse} Middelværdien alene kan ikke give en tilstrækkelig beskrivelse af data fordelingen. Man må også have beregreber, der beskriver dataets variabiliet. Den bedste størrelse til netop dette formål er varians, $\sigma ^2$. Variansen er den gennemsnitlige kvadrerede afstand til middelværdien og er givet ved formlen:
+$$\sigma ^2=E[(X-\mu)^2]=\sum_{x}^{}(x-\mu)^2 \cdot f(x)$$
+
+Kvadratroden af variansen kaldes standardafvigelsen.
+
 \subsubsection{Kontinuerte stokastiske variable}
 
 \subsection{Normalfordelingen}
