@@ -27,17 +27,35 @@ $$\mu=E(X)=\sum_{x}^{}x \cdot f(x)$$
 \paragraph{Varians og standardafvigelse} Middelværdien alene kan ikke give en tilstrækkelig beskrivelse af data fordelingen. Man må også have beregreber, der beskriver dataets variabiliet. Den bedste størrelse til netop dette formål er varians, $\sigma ^2$. Variansen er den gennemsnitlige kvadrerede afstand til middelværdien og er givet ved formlen:
 $$\sigma ^2=E[(X-\mu)^2]=\sum_{x}^{}(x-\mu)^2 \cdot f(x)$$
 
-Kvadratroden af variansen kaldes standardafvigelsen. For kontinuerte stokastiske variable kaldes sandsynlighedfunktionen for tæthedsfunktionen, denne er defineret for alle $x \in \mathbb{R}$, $f(x) \ge 0 \forall x \in \mathbb{R}$ og $\int_{-\infty}^{\infty} f(x) dx = 1$ 
+Kvadratroden af variansen kaldes standardafvigelsen. 
 
 \subsubsection{Kontinuerte stokastiske variable}
-Kontinuerte stokastiske variable antager værdier på en kontinuert skala. Det vil sige, at variableværdier ikke er begrænset til heltal. 
+Kontinuerte stokastiske variable antager værdier på en kontinuert skala. Det vil sige, at variableværdier ikke er begrænset til heltal. For kontinuerte stokastiske variable kaldes sandsynlighedfunktionen for tæthedsfunktionen, denne er defineret for alle $x \in \mathbb{R}$, $f(x) \ge 0 \forall x \in \mathbb{R}$ og $\int_{-\infty}^{\infty} f(x) dx = 1$
+Sandsynligheden for at den stokastiske kontinuerte variabel $X$ ligger mellem værdierne $a$ og $b$ er givet således: $$P(a<X<b)=\int_{a}^{b}f(x)dx$$. Når tæthedsfunktionen integreres, så fås fordelingsfunktionen. Denne er givet ved:
+$$F(x)=P(X \le x) = \int_{-\infty}^{x}f(y)dy, x\in \mathbb{R}$$
+Denne definition er analog med definitionen af fordelingsfunktionen for diskrete stokastiske variable. Her anvendes integration i stedet for summation.
 
+\paragraph{Middel} For beregning af middelværdien for kontinuerte stokastiske variable gælder samme princip, som til beregning af middelværdien for diskrete stokastiske variable. Summation udskiftes ligeledes med integration i dette tilfælde.
+$$\mu=E(X)=\int_{-\infty}^{\infty}xf(x)dx$$
 
+\paragraph{Varians og standardafvigelse} Variansen for kontinuerte stokastiske variable fortæller det samme, som ved diskrete stokastiske variable, men der anvendes igen integration fremfor summation til at beregne variansen. Formlen ser således ud:
+$$\sigma^2=\int_{-\infty}^{\infty}(x-\mu)^2f(x)dx$$ 
 
 
 \subsection{Normalfordelingen}
+Normalfordelingen er en kontinuert distribution med tæthedsfunktion:
+$$n(x;\mu, \sigma)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+Nomarlfordelingen er afhængig af to parametre, som er middelværdien $\mu$ og standardafvigelsen $\sigma$.
+Standardnormalfordelingen er et særtilfælde af normalfordelingen for middelværdien er 0 og standardafvigelsen er 1.
+Hvis den stokastiske varibel $Y$ følger en normalfordeling med parametrene $\mu$ og $\sigma$ bruges notationen:
+$Y \sim norm(\mu,\sigma)$.
 
 \subsubsection{Z-score}
+Enhver normalfordelt stokastisk variabel kan standardiseres ved brug denne formel:
+$$Z=\frac{Y-\mu}{\sigma}$$
+
+Det gælder at $Z \sim norm(0,1)$ følger en standardnormalfordelingen, og at $z$ repræsenterer antallet af standardafvigelser, $y$ ligger fra $\mu$. 
 
 \subsection{t-fordeling}
 
