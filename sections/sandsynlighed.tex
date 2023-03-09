@@ -19,7 +19,7 @@ En stokastisk variabel, $X$, tildeler variable i udfaldsrummet en talværdi. Det
 \subsubsection{Diskrete stokastiske variable}
 Ved diskrete stokastiske variable antager $X$ kun hele værdier. Det giver eksempelvis ikke mening at tale om en halv plat eller halve øjne på terninger, hvorfor begge disse er eksempler på diskrete stokastiske variable.
 Sandsynlighedsfunktionen for en diskret stokatisk variabel beskriver sandligheden for at variablen antager en given værdi, $f(x)=P(X=x)$. Dette kaldes også for \emph{massefunktionen}.
-Herudfra kan variablens fordelingsfunktion, $F(x)$, bestemmes. Denne anvendes til at bestemme sandsynligheden for, at den stokastiske variabel antager en værdi lig med eller mindre end $x$, $$F(x)=P(X \le x)=\sum_{t \le x}^{} f(t), for  -\infty < x < \infty$$.
+Herudfra kan variablens fordelingsfunktion, $F(x)$, bestemmes. Denne anvendes til at bestemme sandsynligheden for, at den stokastiske variabel antager en værdi lig med eller mindre end $x$, $$F(x)=P(X \le x)=\sum_{t \le x}^{} f(t) for  -\infty < x < \infty$$.
 
 \paragraph{Middel} Middelværdien kaldes også for den forventede værdi, $E(X)$. Denne beregnes ved brug af sandsynlighedsfunktionen og er et vægtet gennemsnit, hvor hver mulig værdi for $X$ indgår med sin sandsynlighed, $f(x)$. Den forventede værdi beskriver det gennemsnitlige resultat ved mange gentagelser af samme eksperiment.
 $$\mu=E(X)=\sum_{x}^{}x \cdot f(x)$$
@@ -42,6 +42,18 @@ $$\mu=E(X)=\int_{-\infty}^{\infty}xf(x)dx$$
 $$\sigma^2=\int_{-\infty}^{\infty}(x-\mu)^2f(x)dx$$ 
 
 
+\subsection{Stikprøver}
+En population betegner hele den gruppe, som ønskes beskrevet med statistik. Udtages kun en delmængde af denne gruppe, tales i stedet om en stikprøve.
+En stikprøve indeholder et antal elementer, som uafhængigt og tilfældigt er udvalgt fra populationen. Dette gøres på denne måde for at undgå bias og betyder, at sandsynligheden ved udtagningen af et element ikke påvirkes af værdien af de foregående observationer.
+Stikprøverne kan bruges til at drage konklusioner om populationen, eksempelvis kan middelværdien i stikprøven bruges til at sige noget om middelværdien i populationen. 
+
+\paragraph{Stikprøvens middelværdi} I stikprøven kan middelværdien beregnes som gennemsnittet af alle stikprøvens elementer:
+$$\bar{X}=\frac{1}{n} \cdot \sum_{i=1}^{n} X_i $$
+
+$\bar{X}$ er en stokastisk variabel og det gælder, at $E(\bar{X}=\mu)$.\newline
+Standardafvigelse for $\bar{X}$ kaldes \emph{standardfejlen} og er givet ved: $\frac{\sigma}{\sqrt{n}}$, hvor $\sigma$ er populationens standardafvigelse og $n$ er stikprøvestørrelsen. Denne definition fører til, at standardfejlen bliver mindre desto større stikprøve.
+
+
 \subsection{Normalfordelingen}
 Normalfordelingen er en kontinuert distribution med tæthedsfunktion:
 $$n(x;\mu, \sigma)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
@@ -62,5 +74,3 @@ Det gælder at $Z \sim norm(0,1)$ følger en standardnormalfordelingen, og at $z
 \subsubsection{t-score}
 
 \subsection{Chi i anden-fordelingen}
-
-\subsection{Stikprøver}
