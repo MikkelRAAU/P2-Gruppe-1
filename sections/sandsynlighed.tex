@@ -2,15 +2,18 @@
 Noget indledende tekst om sandsynlighed
 
 \subsection{Udfaldsrum og hændelser}
-Mængden af alle mulige udfald fra et statisk eksperiment kaldes for \emph{udfaldsrummet,  S}, et hvert udfald kalde et element eller medlem af udfaldsrummet. Det vil sige, at udfaldsrummet for kast med en mønt indeholder de to elementer; plat og krone.
-\newline
-En delmængde af udfaldsrummet kaldes en \emph{hændelse, A}, dette noteres som $A \subseteq S$. Ved kast med en terning kan en hændelse, $A$ være, at terningen viser et lige antal øjne. Denne hændelse noteres $A=\{2,4,6\}$.
+Mængden af alle mulige udfald fra et statisk eksperiment kaldes for \emph{udfaldsrummet,  S}, ethvert udfald kalde et element eller medlem af udfaldsrummet. Det vil sige, at udfaldsrummet for kast med en mønt indeholder de to elementer; plat og krone.
+\\
+\\
+\noindent En delmængde af udfaldsrummet kaldes en \emph{hændelse, A}, dette noteres som $A \subseteq S$. Ved kast med en terning kan en hændelse, $A$ være, at terningen viser et lige antal øjne. Denne hændelse noteres $A=\{2,4,6\}$.
 
 
 \subsubsection{Sandsynligheden for en hændelse}
-Sandsynligheden for at en hændelse forekommer er andelen af gange, hvor den givne hændelse, $A$, sker ved gentagelse af eksperiment, dette noteres som $P(A)$. Sandsynligheden for en hændelse er et tal mellem 0 og 1, $0 \le P(A) \le 1$. Summen af alle sandsynlighederne for udfaldsrummet er 1, $P(S)=1$, og derved indikerer en sandsynlighed tæt på 1 en sandsynlighed for denne hændelse.
-\newline
-Hvis der er lige stor sandsynlighed for alle udfald i udfaldsrummet kalde sandsynlighedsfordelingen uniform. Dette er tilfældet ved kast af mønt såvel som kast med terning.
+Sandsynligheden for at en hændelse forekommer er andelen af gange, hvor den givne hændelse, $A$, sker ved gentagelse af eksperiment, dette noteres som $P(A)$. Sandsynligheden for en hændelse er et tal mellem 0 og 1, $0 \le P(A) \le 1$. 
+Summen af alle sandsynlighederne for udfaldsrummet er 1, $P(S)=1$, og derved indikerer en sandsynlighed tæt på 1 en sandsynlighed for denne hændelse.
+\\
+\\
+\noindent Hvis der er lige stor sandsynlighed for alle udfald i udfaldsrummet kalde sandsynlighedsfordelingen uniform. Dette er tilfældet ved kast af mønt såvel som kast med terning.
 
 
 \subsection{Stokastiske variable}
@@ -19,7 +22,7 @@ En stokastisk variabel, $X$, tildeler variable i udfaldsrummet en talværdi. Det
 \subsubsection{Diskrete stokastiske variable}
 Ved diskrete stokastiske variable antager $X$ kun hele værdier. Det giver eksempelvis ikke mening at tale om en halv plat eller halve øjne på terninger, hvorfor begge disse er eksempler på diskrete stokastiske variable.
 Sandsynlighedsfunktionen for en diskret stokatisk variabel beskriver sandligheden for at variablen antager en given værdi, $f(x)=P(X=x)$. Dette kaldes også for \emph{massefunktionen}.
-Herudfra kan variablens fordelingsfunktion, $F(x)$, bestemmes. Denne anvendes til at bestemme sandsynligheden for, at den stokastiske variabel antager en værdi lig med eller mindre end $x$, $$F(x)=P(X \le x)=\sum_{t \le x}^{} f(t) for  -\infty < x < \infty$$.
+Herudfra kan variablens fordelingsfunktion, $F(x)$, bestemmes. Denne anvendes til at bestemme sandsynligheden for, at den stokastiske variabel antager en værdi lig med eller mindre end $x$: $$F(x)=P(X \le x)=\sum_{t \le x}^{} f(t) for  -\infty < x < \infty$$
 
 \paragraph{Middel} Middelværdien kaldes også for den forventede værdi, $E(X)$. Denne beregnes ved brug af sandsynlighedsfunktionen og er et vægtet gennemsnit, hvor hver mulig værdi for $X$ indgår med sin sandsynlighed, $f(x)$. Den forventede værdi beskriver det gennemsnitlige resultat ved mange gentagelser af samme eksperiment.
 $$\mu=E(X)=\sum_{x}^{}x \cdot f(x)$$
@@ -27,13 +30,19 @@ $$\mu=E(X)=\sum_{x}^{}x \cdot f(x)$$
 \paragraph{Varians og standardafvigelse} Middelværdien alene kan ikke give en tilstrækkelig beskrivelse af data fordelingen. Man må også have beregreber, der beskriver dataets variabiliet. Den bedste størrelse til netop dette formål er varians, $\sigma ^2$. Variansen er den gennemsnitlige kvadrerede afstand til middelværdien og er givet ved formlen:
 $$\sigma ^2=E[(X-\mu)^2]=\sum_{x}^{}(x-\mu)^2 \cdot f(x)$$
 
-Kvadratroden af variansen kaldes standardafvigelsen. 
+\noindent Kvadratroden af variansen kaldes standardafvigelsen. 
 
 \subsubsection{Kontinuerte stokastiske variable}
-Kontinuerte stokastiske variable antager værdier på en kontinuert skala. Det vil sige, at variableværdier ikke er begrænset til heltal. For kontinuerte stokastiske variable kaldes sandsynlighedfunktionen for tæthedsfunktionen, denne er defineret for alle $x \in \mathbb{R}$, $f(x) \ge 0 \forall x \in \mathbb{R}$ og $\int_{-\infty}^{\infty} f(x) dx = 1$
-Sandsynligheden for at den stokastiske kontinuerte variabel $X$ ligger mellem værdierne $a$ og $b$ er givet således: $$P(a<X<b)=\int_{a}^{b}f(x)dx$$. Når tæthedsfunktionen integreres, så fås fordelingsfunktionen. Denne er givet ved:
+Kontinuerte stokastiske variable antager værdier på en kontinuert skala. Det vil sige, at variabelværdier ikke er begrænset til heltal. 
+\\
+\\
+\noindent For kontinuerte stokastiske variable kaldes sandsynlighedfunktionen for \emph{tæthedsfunktionen}, denne er defineret for alle $x \in \mathbb{R}$, derudover gælder det, at $f(x) \ge 0 \forall x \in \mathbb{R}$, 
+og slutteligt at $\int_{-\infty}^{\infty} f(x) dx = 1$.
+\\
+\\ 
+\noindent Sandsynligheden for at den stokastiske kontinuerte variabel $X$ ligger mellem værdierne $a$ og $b$ er beregnes således: $$P(a<X<b)=\int_{a}^{b}f(x)dx$$ \noindent Ved integretion af tæthedsfunktionen fås fordelingsfunktionen. Denne er altså givet ved:
 $$F(x)=P(X \le x) = \int_{-\infty}^{x}f(y)dy, x\in \mathbb{R}$$
-Denne definition er analog med definitionen af fordelingsfunktionen for diskrete stokastiske variable. Her anvendes integration i stedet for summation.
+\noindent Denne definition er analog med definitionen af fordelingsfunktionen for diskrete stokastiske variable. Her anvendes integration i stedet for summation.
 
 \paragraph{Middel} For beregning af middelværdien for kontinuerte stokastiske variable gælder samme princip, som til beregning af middelværdien for diskrete stokastiske variable. Summation udskiftes ligeledes med integration i dette tilfælde.
 $$\mu=E(X)=\int_{-\infty}^{\infty}xf(x)dx$$
@@ -50,16 +59,21 @@ Stikprøverne kan bruges til at drage konklusioner om populationen, eksempelvis 
 \paragraph{Stikprøvens middelværdi} I stikprøven kan middelværdien beregnes som gennemsnittet af alle stikprøvens elementer:
 $$\bar{X}=\frac{1}{n} \cdot \sum_{i=1}^{n} X_i $$
 
-$\bar{X}$ er en stokastisk variabel og det gælder, at $E(\bar{X}=\mu)$.\newline
-Standardafvigelse for $\bar{X}$ kaldes \emph{standardfejlen} og er givet ved: $\frac{\sigma}{\sqrt{n}}$, hvor $\sigma$ er populationens standardafvigelse og $n$ er stikprøvestørrelsen. Denne definition fører til, at standardfejlen bliver mindre desto større stikprøve.
+\noindent Da $\bar{X}$ er en stokastisk variabel og det gælder, at $E(\bar{X}=\mu)$.
+\\
+\\
+\noindent Standardafvigelse for $\bar{X}$ kaldes \emph{standardfejlen} og er givet ved: $\frac{\sigma}{\sqrt{n}}$, hvor $\sigma$ er populationens standardafvigelse og $n$ er stikprøvestørrelsen. Denne definition fører til, at standardfejlen bliver mindre desto større stikprøve.
 
 
 \subsection{Normalfordelingen}
 Normalfordelingen er en kontinuert distribution med tæthedsfunktion:
 $$n(x;\mu, \sigma)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
-Nomarlfordelingen er afhængig af to parametre, som er middelværdien $\mu$ og standardafvigelsen $\sigma$.
-Standardnormalfordelingen er et særtilfælde af normalfordelingen for middelværdien er 0 og standardafvigelsen er 1.
+\noindent Den klokkeformede graf, som denne funktion giver, er altså et afgørende karakteristika for denne fordeling.
+\\
+\\
+\noindent Normalfordelingen er afhængig af to parametre, som er middelværdien $\mu$ og standardafvigelsen $\sigma$.
+\emph{Standardnormalfordelingen} er et særtilfælde af normalfordelingen for middelværdien er 0 og standardafvigelsen er 1.
 Hvis den stokastiske varibel $Y$ følger en normalfordeling med parametrene $\mu$ og $\sigma$ bruges notationen:
 $Y \sim norm(\mu,\sigma)$.
 
@@ -67,7 +81,20 @@ $Y \sim norm(\mu,\sigma)$.
 Enhver normalfordelt stokastisk variabel kan standardiseres ved brug denne formel:
 $$Z=\frac{Y-\mu}{\sigma}$$
 
-Det gælder at $Z \sim norm(0,1)$ følger en standardnormalfordelingen, og at $z$ repræsenterer antallet af standardafvigelser, $y$ ligger fra $\mu$. 
+\noindent Hvor $Y$ er den stokastiske variabel, $\mu$ er populationens middelværdi, og $\sigma$ er populationens standardafvigelse.
+\\
+\\
+\noindent Denne standardisering betyder, gør $Z$ til en stokastisk variabel, der følger standardnormalfordelingen, og at $z$ repræsenterer antallet af standardafvigelser, $y$ ligger fra $\mu$. 
+
+\subsubsection{Central limit theorem}
+Når tilfældige stikprøver udtages fra en population med en hvilken som helst fordeling, vil det ses, at fordelingen af stikprøvens middelværdi approksimerer normalfordelingen, når stikprøvestørrelsen går mod uendeligt.
+Dette noteres som $\bar{X} \approx norm\Bigl(\mu,\frac{\sigma}{\sqrt{n}}\Bigr)$ 
+Afhængigt af fordelingen i populationen, holder central limit theorem som regel for stikprøver med 30 eller flere observationer. 
+\\
+\\
+\noindent Da $\bar{X}$ derved er en normalfordelt stokastisk variabel, kan denne ligeledes standardiseres ved at trække middelværdien fra og dele med standardafvigelse, her standardfejlen, som er givet ved $\frac{\sigma}{\sqrt{n}}$.
+$$Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}$$
+
 
 \subsection{t-fordeling}
 
