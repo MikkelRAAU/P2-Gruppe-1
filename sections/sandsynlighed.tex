@@ -22,13 +22,13 @@ En stokastisk variabel, $X$, tildeler variable i udfaldsrummet en talværdi. Det
 \subsubsection{Diskrete stokastiske variable}
 Ved diskrete stokastiske variable antager $X$ kun hele værdier. Det giver eksempelvis ikke mening at tale om en halv plat eller halve øjne på terninger, hvorfor begge disse er eksempler på diskrete stokastiske variable.
 Sandsynlighedsfunktionen for en diskret stokatisk variabel beskriver sandligheden for at variablen antager en given værdi, $f(x)=P(X=x)$. Dette kaldes også for \emph{massefunktionen}.
-Herudfra kan variablens fordelingsfunktion, $F(x)$, bestemmes. Denne anvendes til at bestemme sandsynligheden for, at den stokastiske variabel antager en værdi lig med eller mindre end $x$: $$F(x)=P(X \le x)=\sum_{t \le x}^{} f(t) for  -\infty < x < \infty$$
+Herudfra kan variablens fordelingsfunktion, $F(x)$, bestemmes. Denne anvendes til at bestemme sandsynligheden for, at den stokastiske variabel antager en værdi lig med eller mindre end $x$: $$F(x)=P(X \le x)=\sum_{t \le x}^{} f(t), \ \ \ \ \text{for}  -\infty < x < \infty.$$
 
 \paragraph{Middel} Middelværdien kaldes også for den forventede værdi, $E(X)$. Denne beregnes ved brug af sandsynlighedsfunktionen og er et vægtet gennemsnit, hvor hver mulig værdi for $X$ indgår med sin sandsynlighed, $f(x)$. Den forventede værdi beskriver det gennemsnitlige resultat ved mange gentagelser af samme eksperiment.
-$$\mu=E(X)=\sum_{x}^{}x \cdot f(x)$$
+$$\mu=E(X)=\sum_{x}^{}x \cdot f(x).$$
 
 \paragraph{Varians og standardafvigelse} Middelværdien alene kan ikke give en tilstrækkelig beskrivelse af data fordelingen. Man må også have beregreber, der beskriver dataets variabiliet. Den bedste størrelse til netop dette formål er varians, $\sigma ^2$. Variansen er den gennemsnitlige kvadrerede afstand til middelværdien og er givet ved formlen:
-$$\sigma ^2=E[(X-\mu)^2]=\sum_{x}^{}(x-\mu)^2 \cdot f(x)$$
+$$\sigma ^2=E[(X-\mu)^2]=\sum_{x}^{}(x-\mu)^2 \cdot f(x).$$
 
 \noindent Kvadratroden af variansen kaldes standardafvigelsen. 
 
@@ -36,19 +36,20 @@ $$\sigma ^2=E[(X-\mu)^2]=\sum_{x}^{}(x-\mu)^2 \cdot f(x)$$
 Kontinuerte stokastiske variable antager værdier på en kontinuert skala. Det vil sige, at variabelværdier ikke er begrænset til heltal. 
 \\
 \\
-\noindent For kontinuerte stokastiske variable kaldes sandsynlighedfunktionen for \emph{tæthedsfunktionen}, denne er defineret for alle $x \in \mathbb{R}$, derudover gælder det, at $f(x) \ge 0 \forall x \in \mathbb{R}$, 
-og slutteligt at $\int_{-\infty}^{\infty} f(x) dx = 1$.
+\noindent For kontinuerte stokastiske variable kaldes sandsynlighedfunktionen for \emph{tæthedsfunktionen}, denne er defineret for alle $x \in \mathbb{R}$, derudover gælder det, at $f(x) \ge 0 \ \text{for alle} \ x \in \mathbb{R}$, 
+og slutteligt at $\int_{-\infty}^{\infty} f(x)\ dx = 1$.
 \\
 \\ 
-\noindent Sandsynligheden for at den stokastiske kontinuerte variabel $X$ ligger mellem værdierne $a$ og $b$ er beregnes således: $$P(a<X<b)=\int_{a}^{b}f(x)dx$$ \noindent Ved integretion af tæthedsfunktionen fås fordelingsfunktionen. Denne er altså givet ved:
-$$F(x)=P(X \le x) = \int_{-\infty}^{x}f(y)dy, x\in \mathbb{R}$$
+\noindent Sandsynligheden for at den stokastiske kontinuerte variabel $X$ ligger mellem værdierne $a$ og $b$ er beregnes således: $$P(a<X<b)=\int_{a}^{b}f(x)\ dx.$$ 
+\noindent Ved integretion af tæthedsfunktionen fås fordelingsfunktionen. Denne er altså givet ved:
+$$F(x)=P(X \le x) = \int_{-\infty}^{x}f(y)\ dy, \ \ \ \ x\in \mathbb{R}.$$
 \noindent Denne definition er analog med definitionen af fordelingsfunktionen for diskrete stokastiske variable. Her anvendes integration i stedet for summation.
 
 \paragraph{Middel} For beregning af middelværdien for kontinuerte stokastiske variable gælder samme princip, som til beregning af middelværdien for diskrete stokastiske variable. Summation udskiftes ligeledes med integration i dette tilfælde.
-$$\mu=E(X)=\int_{-\infty}^{\infty}xf(x)dx$$
+$$\mu=E(X)=\int_{-\infty}^{\infty}x \cdot f(x)\ dx. $$
 
 \paragraph{Varians og standardafvigelse} Variansen for kontinuerte stokastiske variable fortæller det samme, som ved diskrete stokastiske variable, men der anvendes igen integration fremfor summation til at beregne variansen. Formlen ser således ud:
-$$\sigma^2=\int_{-\infty}^{\infty}(x-\mu)^2f(x)dx$$ 
+$$\sigma^2=\int_{-\infty}^{\infty}(x-\mu)^2 \cdot f(x)\ dx.$$ 
 
 
 \subsection{Stikprøver}
@@ -57,9 +58,9 @@ En stikprøve indeholder et antal elementer, som uafhængigt og tilfældigt er u
 Stikprøverne kan bruges til at drage konklusioner om populationen, eksempelvis kan middelværdien i stikprøven bruges til at sige noget om middelværdien i populationen. 
 
 \paragraph{Stikprøvens middelværdi} I stikprøven kan middelværdien beregnes som gennemsnittet af alle stikprøvens elementer:
-$$\bar{X}=\frac{1}{n} \cdot \sum_{i=1}^{n} X_i $$
+$$\bar{X}=\frac{1}{n} \cdot \sum_{i=1}^{n} X_i.$$
 
-\noindent Da $\bar{X}$ er en stokastisk variabel og det gælder, at $E(\bar{X}=\mu)$.
+\noindent Størrelsen $\bar{X}$ er en stokastisk variabel, og det gælder, at $E(\bar{X}=\mu)$.
 \\
 \\
 \noindent Standardafvigelse for $\bar{X}$ kaldes \emph{standardfejlen} og er givet ved: $\frac{\sigma}{\sqrt{n}}$, hvor $\sigma$ er populationens standardafvigelse og $n$ er stikprøvestørrelsen. Denne definition fører til, at standardfejlen bliver mindre desto større stikprøve.
@@ -67,7 +68,7 @@ $$\bar{X}=\frac{1}{n} \cdot \sum_{i=1}^{n} X_i $$
 
 \subsection{Normalfordelingen}
 Normalfordelingen er en kontinuert distribution med tæthedsfunktion:
-$$n(x;\mu, \sigma)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+$$n(x;\mu, \sigma)=\frac{1}{\sigma\sqrt{2\pi}} \cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}}.$$
 
 \noindent Den klokkeformede graf, som denne funktion giver, er altså et afgørende karakteristika for denne fordeling.
 \\
@@ -79,9 +80,9 @@ $Y \sim norm(\mu,\sigma)$.
 
 \subsubsection{Z-score}
 Enhver normalfordelt stokastisk variabel kan standardiseres ved brug denne formel:
-$$Z=\frac{Y-\mu}{\sigma}$$
+$$Z=\frac{Y-\mu}{\sigma},$$
 
-\noindent Hvor $Y$ er den stokastiske variabel, $\mu$ er populationens middelværdi, og $\sigma$ er populationens standardafvigelse.
+\noindent hvor $Y$ er den stokastiske variabel, $\mu$ er populationens middelværdi, og $\sigma$ er populationens standardafvigelse.
 \\
 \\
 \noindent Denne standardisering betyder, gør $Z$ til en stokastisk variabel, der følger standardnormalfordelingen, og at $z$ repræsenterer antallet af standardafvigelser, $y$ ligger fra $\mu$. 
@@ -92,8 +93,8 @@ Dette noteres som $\bar{X} \approx norm\Bigl(\mu,\frac{\sigma}{\sqrt{n}}\Bigr)$
 Afhængigt af fordelingen i populationen, holder central limit theorem som regel for stikprøver med 30 eller flere observationer. 
 \\
 \\
-\noindent Da $\bar{X}$ derved er en normalfordelt stokastisk variabel, kan denne ligeledes standardiseres ved at trække middelværdien fra og dele med standardafvigelse, her standardfejlen, som er givet ved $\frac{\sigma}{\sqrt{n}}$.
-$$Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}$$
+\noindent Da $\bar{X}$ derved er en normalfordelt stokastisk variabel, kan denne ligeledes standardiseres ved at trække middelværdien fra og dele med standardafvigelse, her standardfejlen, som er givet ved $\frac{\sigma}{\sqrt{n}}$:
+$$Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}.$$
 
 
 \subsection{t-fordeling}
@@ -101,3 +102,14 @@ $$Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}$$
 \subsubsection{t-score}
 
 \subsection{Chi i anden-fordelingen}
+Chi i anden-fordelingen er et særtilfælde af gammafordelingen, som kun afhænger af antallet af frihedsgrader, $v$, idet $\mu=v$ og $\sigma^2=2v$.
+Fordelingsfunktionen er givet ved:
+
+$$f(x;v)\begin{cases}
+    \frac{1}{2^{v/2}\Gamma(v/2)} \cdot x^{v/2-1} \cdot e^{-x/2},  & x > 0, \\
+    0, &  \text{ellers.}
+  \end{cases}$$
+
+  \noindent Det ses heraf, at gammafunktionen indgår i foreskriften, og denne har følgende definition:
+
+  $$\Gamma(\alpha)=\int_{0}^{\infty}x^{\alpha-1} \cdot e^{-x}\,dx, \ \ \ \  \text{for}\  \alpha > 0.$$
