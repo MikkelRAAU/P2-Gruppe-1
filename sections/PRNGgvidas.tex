@@ -9,6 +9,49 @@ Computere er deterministiske, hvilket betyder, at alle resultater og handlinger 
 \cite{Matsuoka2021} 
 giver bud på fire måder, hvorpå en TRNG kan udarbejdes ved hjælp af termisk støj.Da arbejdet med TRNG'er er ressourcekrævende og ligger uden for projektets omfang, ses der bort fra TRNG'er til generering af tilfældige tal i dette projekt.
 
+\subsection{Middle-square}
+"Middle-square" metoden, opfundet af John Von Neumann, er en algoritme til at generere pseudotilfældige tal. Algoritmen fungerer ved at tage et to- eller firecifret tal (kendt som "seed"), som er det første tal, $x_0$, i den nye sekvens. Dernæst kvadreres $x_0$, hvilket resulterer i et otte- eller syvcifret tal. Hvis tallet er syvcifret, tilføjes en nul foran. De fire midterste cifre i det kvadrerede tal bruges som det næste "seed". Algoritmen forventes at producere en tilfældig sekvens uden et klart mønster.
+\noindent Metoden "middle-square" er langt fra perfekt, da der er forskellige tal, som kan føre til gentagne tal, såsom $0000$, $0100$, $2500$, $3792$ og $7600$. Derudover vil algoritmen på et tidspunkt løbe ind i en af $13$ cyklusser. Den mest almindelige cyklus er $4100$, $8100$, $6100$ og $2100$, og det længste talrække, som metoden kan producere, er 142 \cite{Knuth1998}.
+\noindent Fordelen ved "middle-square" metoden er dens relative enkelhed i implementeringen og talgenerering, dog kan den ikke producere en lang talrække. En anden stor ulempe ved "middle-square" metoden er, at den kan sætte sig fast og vil altid falde i en cyklus, der producerer de samme tal igen og igen. Derfor er "middle-square" ikke en god pseudotilfældig talgenerator.
+
+
+\subsection{Lagged Fibonacci}
+Metoden "Lagged Fibonacci" er en teknik til at generere pseudotilfældige tal, som ligner tilfældige tal. Den er baseret på Fibonacci-sekvensen, hvor hvert tal $S_n$ er summen af de to foregående tal, $S_{n-1}$ og $S_{n-2}$, og er matematisk udtrykt som:
+
+$$S_n=S_{n-1}+S_{n-2}$$
+
+\noindent Hvis Fibonacci-sekvensen starter med $0$, vil de første ti tal i rækken være: $0,1,1,2,3,5,8,13,21,34,55...$. Introduktionen af "Lagged Fibonacci" skyldes, at Fibonacci-sekvensen har et tydeligt mønster. "Lagged Fibonacci"-metoden kan beskrives ved udtrykket:
+
+$$x_i \equiv (x_{i-j} \oplus x_{i-k}) \mod m, \quad \text{hvor} \quad 0<j<k<i$$
+
+\noindent Her betegner operatoren $\oplus$ division, gange, minus eller plus. Hvis $j$, $k$ og $m$ er valgt korrekt, kan metoden producere en lang talrække, som ser tilfældig ud \cite{RNGMonteCarlo}.
+\noindent Et eksempel på anvendelsen af Lagged Fibonacci kunne være, hvis $j = 3$, $k = 7$, $m = 11$, og et seed value $= 2459259$. I første skridt er $j=5$ og $k=9$, som bliver $5+9$ (mod 11), som giver $3$. Parameterne $j$ og $k$ bestemmer, hvilket tal i seedvaluen, der skal bruges til at udregne det næste Fibonacci-tal.
+\noindent I "The Art of Computer Programming" \cite{Knuth1998} har Knuth opstillet en tabel med de bedste værdier for $j$ og $k$ når $m = 2$. Disse kan ses i tabellen nedenfor. Periodelængden, som er den tid det tager, før generatoren begynder at producere en gentagelse af dens sekvens af tal, afhænger af k-værdien og antallet af bits (e). Udregning af antallet bits består af $2^{e-1}>m$. Udregning af længden kan beskrives som:
+$$L = 2^{e-1}(2^k - 1)$$
+
+\noindent Fordelen ved "Lagged Fibonacci" metoden er dens enkelhed i implementeringen og talgenerering, og talrækken vil se tilfældig ud. Ulempen er selvfølgelig, at "Lagged Fibonacci" er en pseudotilfældig talgenerator, så derfor vil tallene ikke være helt tilfældige.
+\begin{table}[h]
+    \centering
+    \caption{Bedste $j$ og $k$ værdier når $modulo$ er $2$}
+    \begin{tabular}{|c|c|}
+    \hline
+    (j, k) \\
+    \hline
+    (24,55) \\
+    (37,100) \\
+    (83,258) \\
+    (273,607) \\
+    (576,3217) \\
+    (107,378) \\
+    (1029,2281) \\
+    (4187,9689) \\
+    (9739,23209) \\
+    \hline
+    \end{tabular}
+    \end{table}
+
+
+
 \subsection{Linear Congruential Generator}
 Den mest populære PRNG er Linear Congruential Generator (LCG). Denne PRNG er rekursiv og kan beskrives vha. denne formel:\\\\
 \(X_{n+1}=(aX_{n}+c)\, \textup{mod}\, m\\\)
